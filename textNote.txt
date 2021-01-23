@@ -1,0 +1,106 @@
+// Basic JS Projects
+
+
+// hexColors Background 
+const hexNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
+      function colorChanger() {
+            let prefix = '#'
+            for(let i = 0; i < 6; i++) {
+                  let n = Math.floor(Math.random() * hexNums.length);
+                  prefix += hexNums[n];
+                  document.querySelector('body').style.background = prefix
+                  console.log(prefix)
+            }
+      }
+
+      // setInterval(colorChanger, 1000)
+
+
+//Time countDown
+
+      function countDown() {
+            const futureDate = new Date('28 Jan 2021');
+            const currentDate = new Date()
+
+            const totalSeconds = (futureDate - currentDate) / 1000;
+            const days = Math.floor(totalSeconds / 3600 / 24);
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const minutes = (Math.floor(totalSeconds / 60) % 24) % 60
+            const seconds = Math.floor(totalSeconds) % 60
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = formatTime(hours);
+            document.getElementById('mins').innerText = formatTime(minutes);
+            document.getElementById('secs').innerText = formatTime(seconds);
+
+            console.log(days, hours, minutes, seconds );
+            console.log(futureDate - currentDate) / 1000;
+      }
+
+            function formatTime(time) {
+                  return time < 10 ? `0${time}` : time;
+            }
+      countDown();
+      setInterval(countDown, 1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// countdown-timer API
+const newYears = '1 Feb 2021';
+
+      function countDown() {
+            const futureDate = new Date(newYears)
+            const currentDate = new Date();
+
+            const totalSeconds = (futureDate - currentDate) / 1000;
+            const days = Math.floor(totalSeconds / 3600 / 24)
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const minutes = (Math.floor(totalSeconds / 60) % 24) % 60
+            const seconds = Math.floor(totalSeconds) % 60
+
+            document.getElementById('days').innerText = days;
+            document.getElementById('hours').innerText = formatTime(hours);
+            document.getElementById('mins').innerText = formatTime(minutes);
+            document.getElementById('secs').innerText = formatTime(seconds);
+      }
+
+      function formatTime(time) {
+            return time < 10 ? `0${time}` : time
+      }
+
+      //initial
+      countDown();
+
+      setInterval(countDown
