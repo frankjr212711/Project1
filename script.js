@@ -1,9 +1,21 @@
 
 const form = document.getElementById('form')
-.addEventListener('submit', function(e) {
-      e.preventDefault()
+form.firstElementChild.firstElementChild.innerHTML = ''
 
-      console.log(e)
+form.addEventListener('submit', function(e) {
+      e.preventDefault()
+// inputs
+const username = document.getElementById('username');
+const email = document.getElementById('email');
+const pwd = document.getElementById('password');
+const pwd2 = document.getElementById('password-check');
+
+
+form.firstElementChild.firstElementChild.innerHTML = 'Username'
+      
+
+
+
 
 
 
