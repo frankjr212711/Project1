@@ -1,24 +1,29 @@
-
-const form = document.getElementById('form')
-form.firstElementChild.firstElementChild.innerHTML = ''
-
-form.addEventListener('submit', function(e) {
-      e.preventDefault()
-// inputs
-const username = document.getElementById('username');
-const email = document.getElementById('email');
-const pwd = document.getElementById('password');
-const pwd2 = document.getElementById('password-check');
-
-
-form.firstElementChild.firstElementChild.innerHTML = 'Username'
+// panels
+(function() {
+      const panels = [...document.querySelectorAll('.panel')];
       
+      panels.forEach(panel => {
+            panel.addEventListener('click', function(e) {
+                     setTimeout(() => {
+                        this.classList.remove('open')
+                  }, 1000);
+                  if(this.classList.contains('open')) {
+                  } else {
+                        this.classList.add('open')
+                  }       
+            });    
+      })
+})();
+
+
+document.getElementById('close').addEventListener('click', function() {
+      const checkboxContent = this.parentElement;
+      checkboxContent.remove();
 
 
 
 
 
 
-})
 
-
+});

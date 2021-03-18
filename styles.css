@@ -2,118 +2,118 @@
 :root {
    --base: #ffc600;
 }
-
-/* form validation */
-.form-wrapper {
-      width: 400px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-      overflow: hidden;
-}
-header  {
-      background: #f7f7f7;
-      border-bottom: 2px solid #f0f0f0;
-      padding: 1rem 1.5rem;
-}
 .container {
-      padding: 1rem ;
+    
+}
+
+.panels { 
       height: 100vh;
-      background-color: #ffbb00;
-      overflow-x: scroll;
-
-      /* display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; */
+      margin-bottom: 1rem;
+     
 }
-
-header h1 {
-   margin: 0;
-   color: #555;
+.panels-content {
+      display: flex;  
 }
-.form {
-      padding: 1rem 1.5rem;
-}
-.form-control {
-      margin-bottom: 10px;
-      /* padding-bottom: 20px; */
-      position: relative;
-}
-.form-control.error {
-      padding-bottom: 20px;
-}
-
-.form-control label {
-      display: inline-block;
-      margin-bottom: 5px;
-}
-.form-control input {
-      display: block;
-
+.panel {
       width: 100%;
-      padding: 10px;
-      border: 2px solid #f0f0f0;
-      border-radius: 5px;
-      font-size: 14px;
-      outline: none;
-      font-family: inherit;
-}
-
-/* input classes  */
-.form-control.success input {
-    border-color: lightgreen;
-}
-.form-control.error input {
-      border-color: lightcoral;
-}
-
-
-.form-control i {
-      position: absolute;
-      top: 40px;
-      right: 10px;
-      visibility: hidden;
-}
-
-/* i classes */
-
-.form-control.success i.fa-check-circle {
-      visibility: visible;
-      color: lightgreen;
-}
-.form-control.error i.fa-exclamation-circle {
-      visibility: visible;
-      color: lightcoral;
-}
-
-
-
-.form-control small {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      visibility: hidden;
-}
-
-/* small classes */
-.form-control.error small {
-      visibility: visible;
-      color: lightcoral;
-}
-
-.form button {
-      width: 100%;
-      padding: .5rem;
-      border: 2px solid purple;
-      background: purple;
-      border-radius: 5px;
-      font-size: 1.4rem;
+      height: 100vh;
+      flex: 1;
+      border: 2px solid rgba(255, 255, 255, .5);
+      background-position: center;
+      background-size: cover;  
       color: #fff;
 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.panel1 { background-image: url(/imgs/image-9.jpg); }
+.panel2 { background-image: url(/imgs/image-7.jpg); }
+.panel3 { background-image: url(/imgs/image-8.jpg); }
+.panel4 { background-image: url(/imgs/image-4.jpg); }
+.panel5 { background-image: url(/imgs/image-10.jpg); }
+.panel6 { background-image: url(/imgs/image-12.jpg); }
+
+.panel.open {
+      color: pink;
+      flex: 5;
+
+}
+
+/* checkbox */
+#close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 15px;
+      height: 3px;
+      /* background: #777; */
+      -webkit-appearance: none; 
+      cursor: pointer;
+}
+#close::before, #close::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 3px;
+      background: #777; 
+}
+#close::before {
+      transform: rotate(-45deg);
+}
+#close::after {
+      transform: rotate(45deg);
 }
 
 
+.checkbox {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--base);
+}
+.checkbox-content {
+      width: 420px;
+      height: 450px;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 7px 7px 3px rgba(0,0,0,0.2);  
+    
+      overflow: hidden;   
+      padding: 1.5rem 1rem; 
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      /* flex-wrap: wrap; */
+
+      position: relative;
+}
+.item {
+      padding: .6rem;
+      display: flex;
+      align-items: center;
+      /* flex-wrap: wrap; */
 
 
+}
+.checkbox-content > .item:not(:last-child) {
+      border-bottom: 1px solid #eee;
+}
+ .item > input {
+       width: 20px;
+       height: 20px;
+       padding: 1rem;
+       display: inline-block;
+      font-size: 1rem; 
+}
 
+.item > p  {
+      padding-left: 1rem;
+}
